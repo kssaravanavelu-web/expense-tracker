@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact -  Expense & Investment Manager</title>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">💰Expense & Investment Manager</div>
+    <ul class="nav-links">
+        <li><a href="file:///F:/Projects/expense%20tracker/home.html">Home</a></li>
+        <li><a href="file:///F:/Projects/expense%20tracker/about.html">About</a></li>
+        <li><a href="file:///F:/Projects/expense%20tracker/report.html">Reports</a></li>
+        <li><a href="file:///F:/Projects/expense%20tracker/contact.html">Contact</a></li>
+        <li><a href="file:///F:/Projects/expense%20tracker/login.html">login</a></li>
+    </ul>
+</nav>
+    <style>
+        body {
+    font-family: 'Poppins', Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: url('image/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: -1;
+}
+
+        /* Navbar */
+        .navbar {
+            background: rgba(0,0,0,0.7);
+            padding: 15px;
+            text-align: center;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+
+        .navbar a:hover {
+            color: #4CAF50;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 80px;
+            border-radius: 15px;
+            width: 450px;
+            text-align: center;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+        .contact-card h2 {
+            margin-bottom: 20px;
+        }
+
+        .contact-card p {
+            color: #555;
+            font-size: 20px;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+        }
+
+        .contact-info p {
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        .contact-info a {
+            text-decoration: none;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Button */
+        .back-btn {
+            margin-top: 20px;
+            display: inline-block;
+            padding: 10px 15px;
+            background: #4CAF50;
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+        }
+
+        .back-btn:hover {
+            background: #45a049;
+        }
+        /* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.logo {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #4CAF50;
+}
+    </style>
+</head>
+<body>
+
+    <!-- Contact Section -->
+    <div class="contact-section">
+        <div class="contact-card">
+            <h2>Contact Me</h2>
+
+            <p>
+                For support, feedback, or any queries related to expense tracking 
+                and investment management, feel free to contact us. 
+                We are always ready to assist you.
+            </p>
+
+            <div class="contact-info">
+                <p>📧 Email:</p>
+                <a href="mailto:kssaravanavelu@gmail.com">
+                    kssaravanavelu@gmail.com
+                </a>
+
+                <p>📱 Phone:</p>
+                <a href="tel:7402509247">
+                    +91 7402509247
+                </a>
+            </div>
+
+            <a href="index.html" class="back-btn">⬅ Back to Home</a>
+        </div>
+    </div>
+
+</body>
+</html>

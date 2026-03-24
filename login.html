@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expense & Investment Manager - Login</title>
+
+<!-- Google Sign-In -->
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+
+<style>
+   body {
+    font-family: 'Poppins', Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: url('image/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: -1;
+}
+
+
+    .container {
+        margin-top: 100px;
+    }
+
+    .card {
+        background: white;
+        color: black;
+        padding: 30px;
+        border-radius: 15px;
+        width: 300px;
+        margin: auto;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    }
+
+    #userInfo img {
+        border-radius: 50%;
+        margin-top: 10px;
+    }
+
+    h1 {
+        margin-bottom: 20px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+   <center> <h1>Expense & Investment Manager</h1></center>
+
+    <div class="card">
+        <h3>Login with Gmail</h3>
+
+        <!-- Google Login Button -->
+        <div id="g_id_onload"
+            data-client_id="YOUR_CLIENT_ID_HERE"
+            data-callback="handleCredentialResponse">
+        </div>
+
+        <div class="g_id_signin"
+            data-type="standard"
+            data-size="large"
+            data-theme="outline"
+            data-text="sign_in_with"
+            data-shape="pill">
+        </div>
+
+        <!-- User Info -->
+        <div id="userInfo"></div>
+    </div>
+</div>
+
+<script>
+function handleCredentialResponse(response) {
+    const data = parseJwt(response.credential);
+
+    // Store user
+    localStorage.setItem("user", JSON.stringify(data));
+
+    showUser(data);
+}
+
+// Decode JWT
+function parseJwt(token) {
+    let base64Url = token.split('.')[1];
+    let base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    let jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+
+    return JSON.parse(jsonPayload);
+}
+
+// Show user info
+function showUser(user) {
+    document.getElementById("userInfo").innerHTML = `
+        <p>👋 Welcome, <b>${user.name}</b></p>
+        <img src="${user.picture}" width="60">
+    `;
+}
+
+// Check if already logged in
+const user = JSON.parse(localStorage.getItem("user"));
+if(user) {
+    showUser(user);
+}
+</script>
+
+</body>
+</html>

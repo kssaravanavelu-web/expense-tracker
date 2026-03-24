@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <nav class="navbar">
+    <div class="logo">💰Expense & Investment Manager</div>
+    <ul class="nav-links">
+        <li><a href="file:///F:/Projects/expense%20tracker/home.html">Home</a></li>
+        <li><a href="file:///F:/Projects/expense%20tracker/about.html">About</a></li>
+        <li><a href="file:///F:/Projects/expense%20tracker/report.html">Reports</a></li>
+        <li><a href="file:///F:/Projects/expense%20tracker/contact.html">Contact</a></li>
+        <li><a href="file:///F:/Projects/expense%20tracker/login.html">login</a></li>
+    </ul>
+</nav>
+    <title>Expense & Investment Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Dashboard -->
+    <div class="dashboard">
+        <div class="card">
+            <img src="image/income.jpg" alt="Income">
+            <h3>Total Earned</h3>
+            <p id="totalEarned">₹0</p>
+        </div>
+        <div class="card">
+            <img src="image/spend.jpg" alt="Expense">
+            <h3>Total Spent</h3>
+            <p id="totalSpent">₹0</p>
+        </div>
+        <div class="card">
+            <img src="image/balance.jpg" alt="Balance">
+            <h3>Remaining Balance</h3>
+            <p id="remainingBalance">₹0</p>
+        </div>
+    </div>
+
+    <h1>Expense & Income Manager</h1>
+
+    <!-- Transaction Form -->
+    <form id="transactionForm">
+        <input type="text" id="name" placeholder="Description" required>
+        <input type="number" id="amount" placeholder="Amount" required>
+        <select id="type">
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+        </select>
+        <button type="submit">Add</button>
+    </form>
+
+    <!-- Transaction Table -->
+    <table id="transactionTable">
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th>Amount</th>
+                <th>Type</th>
+                <th>Date & Time</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
